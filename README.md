@@ -1,10 +1,7 @@
 # Unlock Steam Deck
 
-## Credit
-Credit goes to Chris Titus for the hard work of figuring out the steps to unlock the steam deck. This script is an automation of his steps.
-
 ## What Is It?
-This program unlocks the Steam Deck to allow more advanced users to install packages using the AUR (`yay`) or default package manager (`pacman`). However, the Steam Deck locks itself again on reboot. So I have included a second script to automatically unlock the Steam Deck on boot, if a more permanent option is desired.
+This program unlocks the Steam Deck to allow more advanced users to install packages using the AUR (`yay`) or default package manager (`pacman`). However, the Steam Deck locks itself again on reboot. So I have included a second script to automatically unlock the Steam Deck on boot, if a more persistent option is desired.
 
 The `unlock_steam_deck.sh` script that comes included is the star of the show and unlocks the Steam Deck.
 
@@ -38,6 +35,9 @@ sudo chmod +x unlock_steam_deck.sh
 sudo bash unlock_steam_deck.sh
 ```
 The Steam Deck will lock itself again on boot. Use the automatic method if you do not want to repeat the process each time the Deck is booted.
+
+## Credit
+Credit goes to Chris Titus for the hard work of figuring out the steps to unlock the steam deck. This project builds on his steps posted on his website <a href="https://christitus.com/unlock-steam-deck/" target="_blank">here</a>.
 
 ## Made by
 Joshua Holmes<br/>
