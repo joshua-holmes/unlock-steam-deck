@@ -3,11 +3,11 @@ set -e
 
 ## Init
 append_keyserver() {
-    printf "\n${line}\n" >> ${dir}
+    echo -e "\n${line}\n" >> ${dir}
 }
 check_keyserver() {
     local keyserver="hkps://keyserver.ubuntu.com"
-    local line="keysever ${keyserver}"
+    local line="keyserver ${keyserver}"
     local dir="/etc/pacman.d/gnupg/gpg.conf"
 
     if grep -Fxq "${line}" ${dir}
@@ -16,7 +16,7 @@ check_keyserver() {
     else
         echo "Keyserver '${keyserver}' not found, appending value to ${dir}"
         append_keyserver
-        echo "\nFinished appending\n"
+        echo -e "\nFinished appending\n"
     fi
 }
 install_keyring() {
@@ -26,7 +26,7 @@ install_keyring() {
     curl ${url} --output ${file} --location --silent
     pacman --noconfirm --needed  --quiet --upgrade ${file}
     rm --force ${file}
-    echo "\nKeyring installed\n"
+    echo -e "\nKeyring installed\n"
 }
 
 ## Start program
@@ -37,4 +37,4 @@ pacman-key --populate
 pacman-key --refresh-keys
 # install_keyring # may not be required because base-devel package includes keyring package
 pacman --noconfirm --quiet --needed --sync base-devel
-echo "\nSteamdeck unlock was successful"
+echo -e "\nSteamdeck unlock was successful"
